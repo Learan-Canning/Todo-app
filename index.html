@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leo's Todo App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <div class="stats-container">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Stats Section - Progress and Counter -->
+      <div class="stats-container">
         <div class="details">
-            <h1>Todo list App</h1>
-            <p>keep track of your tasks</p>
-            <div id="progressBar">
-                <div id="progress"></div>
-            </div>
+          <h1>Todo list App</h1>
+          <p>keep track of your tasks</p>
+          <!-- Progress Bar -->
+          <div id="progressBar">
+            <div id="progress"></div>
+          </div>
         </div>
+        <!-- Task Counter Circle -->
         <div class="stats-numbers">
-         <p id="numbers">0/0</p>
+          <p id="numbers">0 /0</p>
         </div>
-    </div>
-    <form action="">
-        <input type="text" id="taskInput" placeholder="Type your task">
-        <button id="newTask" type="submit">+</button>
+      </div>
 
-    </form>
-    <ul class="task-list"></ul>
-  </div>
- 
-  <script src="app.js"></script>
-</body>
+      <!-- Input Form -->
+      <form action="">
+        <input type="text" id="taskInput" placeholder="Type your task" />
+        <button id="newTask" type="submit">+</button>
+      </form>
+
+      <!-- Task List - Populated by JavaScript -->
+      <ul class="task-list"></ul>
+    </div>
+
+    <!-- Load JavaScript files -->
+    <script src="app.js"></script>
+    <!-- Confetti animation library -->
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+  </body>
 </html>
