@@ -40,6 +40,8 @@ const updateStats = () => {
     const progress = ( completedTasks/totalTask ) * 100;
     const progressBar = document.getElementById('progress');
     progressBar.style.width = `${progress}%`;
+
+    document.getElementById('numbers').innerText = `${completedTasks} / ${totalTask}`;
 };
 const updateTaskList = () => {
     const taskList = document.querySelector('.task-list');
@@ -73,3 +75,6 @@ document.getElementById('newTask').addEventListener('click', function(e) {
     addTask();
 
 });
+
+// Initialize stats on page load
+updateStats();
