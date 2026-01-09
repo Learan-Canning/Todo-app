@@ -8,6 +8,7 @@ const addTask = () => {
         tasks.push({ text: text, completed: false });
         taskInput.value = '';
         updateTaskList();
+        updateStats();
 
     }
     
@@ -16,11 +17,13 @@ const addTask = () => {
 const toggleTaskComplete = (index) => {
     tasks[index].completed = !tasks[index].completed;
     updateTaskList();
+    updateStats();
 };
 
 const deleteTask = (index) => {
     tasks.splice(index, 1);
     updateTaskList();
+    updateStats();
 };
 
 const editTask = (index) => {
@@ -29,7 +32,15 @@ const editTask = (index) => {
 
     tasks.splice(index, 1);
     updateTaskList();
-
+    updateStats();
+};
+const updateStats = () => {
+    const completedTasks = tasks.filter(task => task.completed).length;
+    const totalTask = tasks.length;
+    const progress = ( completedTasks/totalTask ) * 100;
+    const progressBar = document.getElementById('progress');
+    progressBar.style.width = `${progress}%`;
+};
 const updateTaskList = () => {
     const taskList = document.querySelector('.task-list');
     taskList.innerHTML = ''
