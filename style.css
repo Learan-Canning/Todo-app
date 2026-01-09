@@ -134,6 +134,11 @@ button {
     height: 20px;
 }
 
+.completed p {
+    text-decoration: line-through;
+    color: var(--teal);
+}
+
 .taskItem img {
     width: 24px;
     height: 24px;

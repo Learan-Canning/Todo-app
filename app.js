@@ -13,8 +13,25 @@ const addTask = () => {
     
 };
 
+const toggleTaskComplete = (index) => {
+    tasks[index].completed = !tasks[index].completed;
+    updateTaskList();
+};
+
+const deleteTask = (index) => {
+    tasks.splice(index, 1);
+    updateTaskList();
+};
+
+const editTask = (index) => {
+    const taskInput = document.getElementById('taskInput');
+    taskInput.value = tasks[index].text;
+
+    tasks.splice(index, 1);
+    updateTaskList();
+
 const updateTaskList = () => {
-    const taskList = document.querySelector('.task-list')  // ✅ Use querySelector for classes
+    const taskList = document.querySelector('.task-list');
     taskList.innerHTML = ''
     
     tasks.forEach((task, index) => {
